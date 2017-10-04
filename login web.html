@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title>WebServer Login</title>
+</head>
+<h1>Webserver Login</h1>
+<body>
+<form id="login" action="/login" method="post">
+   <div class="two-thirds column" id="main">
+     <fieldset>
+      <legend>Login</legend>
+      <input type="radio" id="guestradio" name="heard" value="guest">
+      <label for="guest">guest</label>
+      <input type="radio" id="userradio" name="heard" value="user">
+      <label for="user">user</label><br>
+      <lable for="username" id="userlable">Username:</lable>
+      <input type="text" id="username" name="username" /><br>
+      <label for="pwd">Password:</lable>
+      <input for="password" id="pwd" name="pwd" />
+      <input type="submit" value="Login" />
+     </fieldset>
+   </div>
+</form>
+</body>
+<script src="http://code.jquery.com/jquery-2.1.0.js"></script>
+<script type="text/javascript">
+  $('#guestradio').on('click', function(){
+    $('#userlable').hide()
+    $('#username').hide()
+  })
+  $('#userradio').on('click', function(){
+    $('#userlable').show()
+    $('#username').show()
+  })
+</script>
