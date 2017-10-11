@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebServer Login</title>
+</head>
+<h1>Webserver Login</h1>
+<form id="login" action="/login" method="post">
+    <div class="two-thirds column" id="main">
+        <fieldset>
+            <legend>Login</legend>
+            <input type="radio" id="guestRadio" name="heard" value="guest">
+            <label for="guest">guest</label>
+            <input type="radio" id="userRadio" name="heard" value="user">
+            <label for="user">user</label><br>
+            <lable for="userName" id="userLable">Username:</lable>
+            <input type="text" id="userName" name="userName"/><br>
+            <label for="pwd">Password:</lable>
+                <input for="passWord" id="pwd" name="pwd"/>
+                <input type="submit" value="Login"/>
+        </fieldset>
+    </div>
+</form>
+<script src="http://code.jquery.com/jquery-2.1.0.js"></script>
+<script type="text/javascript">
+    $('#guestRadio').on('click', function () {
+        $('#userLable').hide()
+        $('#userName').hide()
+        $('#login').attr('action','/login')
+    })
+    $('#userRadio').on('click', function () {
+        $('#userLable').show()
+        $('#userName').show()
+        $('#login').attr('action','/login1')
+    })
+    var xhr = new XMLHttpRequest
+    xhr.onload = function(){
+    if (xhr.status===200)
+       var ccc = xhr.responseText
+       $('h1').after('<p>'+ccc+'</p>')
+    }
+xhr.open('GET','https://service.api.psychesworld.com/auth/tip','ture')
+xhr.send(null)
+var script = document.createElement('script');  
+script.src = "http://aa.xx.com/js/*.js";  
+document.div.appendChild(script);
+</script>
