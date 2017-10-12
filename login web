@@ -15,8 +15,8 @@
             <lable for="userName" id="userLable">Username:</lable>
             <input type="text" id="userName" name="userName"/><br>
             <label for="pwd">Password:</lable>
-                <input for="passWord" id="pwd" name="pwd"/>
-                <input type="submit" value="Login"/>
+            <input for="passWord" id="pwd" name="pwd"/>
+            <input type="submit" value="Login"/>
         </fieldset>
     </div>
 </form>
@@ -36,7 +36,8 @@
     xhr.onload = function(){
     if (xhr.status===200)
        var ccc = xhr.responseText
-       $('h1').after('<p>'+ccc+'</p>')
+       var responseObject = JSON.parse(ccc)
+       $('h1').after('<p>'+responseObject+'</p>')
     }
 xhr.open('GET','https://service.api.psychesworld.com/auth/tip','ture')
 xhr.send(null)
